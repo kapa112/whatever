@@ -1,0 +1,80 @@
+import time
+
+def pause():
+    time.sleep(1)
+
+def intro():
+    print("Year 2437. Humanity has colonized several planetary systems.")
+    pause()
+    print("You are Commander Elara Voss, pilot of the exploration vessel *Nyx*.\n")
+    pause()
+    print("A distress signal has been received from the uncharted moon Virelia.\n")
+    pause()
+    choice = input("Do you: (1) Respond to the signal or (2) Ignore it and continue your mission? ")
+    if choice == "1":
+        distress_signal()
+    elif choice == "2":
+        ignore_signal()
+    else:
+        print("Invalid choice. Try again.\n")
+        intro()
+
+def distress_signal():
+    print("\nYou set course for Virelia.")
+    pause()
+    print("The signal grows stronger. You detect signs of an ancient alien structure.")
+    pause()
+    choice = input("Do you: (1) Land near the structure or (2) Scan from orbit? ")
+    if choice == "1":
+        land_near_structure()
+    elif choice == "2":
+        scan_from_orbit()
+    else:
+        print("Invalid choice. Try again.\n")
+        distress_signal()
+
+def ignore_signal():
+    print("\nYou decide not to get involved and continue your mission.")
+    pause()
+    print("Three days later, a nearby colony reports a mysterious loss of communication.\n")
+    pause()
+    print("You can't help but wonder if it's connected to the signal you ignored. Game over.")
+
+
+def land_near_structure():
+    print("\nYou land and suit up for EVA.")
+    pause()
+    print("Inside the structure, glowing glyphs respond to your presence.")
+    pause()
+    choice = input("Do you: (1) Touch the glyphs or (2) Call for backup? ")
+    if choice == "1":
+        touch_glyphs()
+    elif choice == "2":
+        call_backup()
+    else:
+        print("Invalid choice. Try again.\n")
+        land_near_structure()
+
+def scan_from_orbit():
+    print("\nScans reveal energy fluctuations, possibly a power source or defense mechanism.")
+    pause()
+    print("A sudden surge disables your scanners. You must land to continue.\n")
+    land_near_structure()
+
+def touch_glyphs():
+    print("\nAs you touch the glyphs, the structure activates.")
+    pause()
+    print("A holographic entity appears: \"We are the Sylari. Welcome, Elara.\"")
+    pause()
+    print("You have made first contact with an ancient alien race. This could change everything.\n")
+    print("To be continued...")
+
+
+def call_backup():
+    print("\nWhile waiting for backup, a quake damages the structure.")
+    pause()
+    print("The glyphs fade. You’ve lost a chance to make first contact.\n")
+    print("Mission continues, but history will never know what was missed. Game over.")
+
+# Start the game
+intro()
